@@ -1,9 +1,15 @@
+# Make HTTP requests to a REST service
+
+This sample shows how to make HTTP requests in a console app with Eiffel on .NetCore
+
+## Key Features
+
+This sample demonstrates making HTTP requests to a web server, converting JSON objects into Eiffel objects, and terminal output.
+
+## Notes
 In .NET Core (now known as .NET 5 and later), you can use third-party libraries by managing them with the NuGet Package Manager. NuGet is a package manager for .NET that makes it easy to add, remove, and update libraries in your projects.
 
 Here's how you can use third-party libraries in an Eiffel .NET Core application using the NuGet Package Manager:
-
-## Create a New Eiffel Project:
-Start by creating a new .NET Core Eiffel project.  (TBC= To be completed how to do it from EiffelStudio)
 
 ## Search for the Package:
 Go to the NuGet Package Manager website (https://www.nuget.org/) or use the package search feature in your IDE. Search for the third-party library you want to use.
