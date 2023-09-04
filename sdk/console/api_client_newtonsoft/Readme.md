@@ -4,7 +4,9 @@ This sample shows how to make HTTP requests in a console app with Eiffel on .Net
 
 ## Key Features
 
-This sample demonstrates making HTTP requests to a web server, converting JSON objects into Eiffel objects, and terminal output.
+This sample demonstrates making HTTP requests to a web server, converting JSON objects into Eiffel objects, and terminal output. 
+This sample uses a third party library to work with JSON objects Newtonsoft.Json 
+It's based on the following [C# tutorial](https://learn.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)  
 
 ## Notes
 In .NET Core (now known as .NET 5 and later), you can use third-party libraries by managing them with the NuGet Package Manager. NuGet is a package manager for .NET that makes it easy to add, remove, and update libraries in your projects.
