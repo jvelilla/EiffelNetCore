@@ -9,7 +9,7 @@
 
 # Web
     * HTTP 
-    * ASP.Net Core 7
+    * ASP.Net Core 7, 6
 
 ## Getting Started
 
@@ -27,3 +27,5 @@
 Microsoft.AspNetCore.OpenApi  version 7.0.10
 Swashbuckle.AspNetCore        version 6.5.0 
 
+
+dotnet add package Swashbuckle.AspNetCore --version 6.5.0 --package-directory packages
