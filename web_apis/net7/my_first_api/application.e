@@ -19,23 +19,34 @@ feature {NONE} -- Initialization
 			l_controler: WEATER_FORECAST_CONTROLLER
 			builder: WEB_APPLICATION_BUILDER
 			l_native: NATIVE_ARRAY [SYSTEM_STRING]
-			l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
+			--l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
 			l_mvc_builder: IMVC_BUILDER
 			l_service_collection: ISERVICE_COLLECTION
 			l_app: WEB_APPLICATION
 			l_swagger_ui: SWAGGER_UI_OPTIONS
 			l_endpoint: ENDPOINT_ROUTE_BUILDER_EXTENSIONS
+			l_services : ISERVICE_COLLECTION
+			l_current: SYSTEM_OBJECT
+			l_enumerator: IENUMERATOR
+			l_stop: BOOLEAN
+			l_web_options: WEB_APPLICATION_OPTIONS
 		do
-			builder := {WEB_APPLICATION}.create_builder()
+
+			{SYSTEM_DIRECTORY}.set_current_directory(".")
+			create l_web_options.make
+			l_web_options.set_application_name ("Web API")
+			l_web_options.set_environment_name ("Development")
+
+			builder := {WEB_APPLICATION}.create_builder_web_application_options(l_web_options)
 
 				-- Add services to the container
-			if attached {SERVICE_COLLECTION} builder.services as l_services then
-				{MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services).do_nothing
+			l_services := builder.services
+
+			{MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services).do_nothing
 					-- Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-				{ENDPOINT_METADATA_API_EXPLORER_SERVICE_COLLECTION_EXTENSIONS}.add_endpoints_api_explorer (l_services).do_nothing
+			{ENDPOINT_METADATA_API_EXPLORER_SERVICE_COLLECTION_EXTENSIONS}.add_endpoints_api_explorer (l_services).do_nothing
 				--{SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS}.add_swagger_gen(l_services).do_nothing
-					-- Adding swagger raise
-			end
+				-- Adding swagger raise a null pointer exceptions	
 
 			l_app := builder.build
 
@@ -45,14 +56,11 @@ feature {NONE} -- Initialization
 
 --			end
 
---			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
+			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
 
---			{AUTHORIZATION_APP_BUILDER_EXTENSIONS}.use_authorization (l_app).do_nothing()
+			{AUTHORIZATION_APP_BUILDER_EXTENSIONS}.use_authorization (l_app).do_nothing()
 
---			{CONTROLLER_ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_controllers (l_app).do_nothing()
-
---			{ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_get_iendpoint_route_builder_string_request_delegate (
---				endpoints: IENDPOINT_ROUTE_BUILDER; pattern: SYSTEM_STRING; request_delegate: REQUEST_DELEGATE): IENDPOINT_CONVENTION_BUILDER
+			{CONTROLLER_ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_controllers (l_app).do_nothing()
 
 			l_app.run (Void)
 		end
