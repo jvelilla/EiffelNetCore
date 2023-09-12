@@ -29,3 +29,5 @@ Swashbuckle.AspNetCore        version 6.5.0
 
 
 dotnet add package Swashbuckle.AspNetCore --version 6.5.0 --package-directory packages
+
+dotnet add package Microsoft.AspNetCore.OpenApi --version 7.0.10 --package-directory packages
