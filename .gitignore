@@ -3,3 +3,6 @@ EIFGENs
 *.rc
 obj
 packages
+.vs
+bin
+obj

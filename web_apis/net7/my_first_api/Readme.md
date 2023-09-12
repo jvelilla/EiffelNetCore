@@ -21,6 +21,11 @@
     *  Copy the project template net7
     *  Rename it as my_first_api 
         * my_first_api.ecf
+    * Set the environment variable
+    `set ASP_NET_CORE=C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\7.0.10`
+        
+        
+
         
 ##  Add the following packages
 

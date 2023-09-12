@@ -19,10 +19,12 @@ feature {NONE} -- Initialization
 			l_controler: WEATER_FORECAST_CONTROLLER
 			builder: WEB_APPLICATION_BUILDER
 			l_native: NATIVE_ARRAY [SYSTEM_STRING]
-			--l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
+			l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
 			l_mvc_builder: IMVC_BUILDER
 			l_service_collection: ISERVICE_COLLECTION
 			l_app: WEB_APPLICATION
+			l_swagger_ui: SWAGGER_UI_OPTIONS
+			l_endpoint: ENDPOINT_ROUTE_BUILDER_EXTENSIONS
 		do
 			builder := {WEB_APPLICATION}.create_builder()
 
@@ -37,16 +39,20 @@ feature {NONE} -- Initialization
 
 			l_app := builder.build
 
-				-- Configure the HTTP request pipeline.
-			if attached {HOSTING_ENVIRONMENT} l_app.environment as l_environment and then {HOST_ENVIRONMENT_ENV_EXTENSIONS}.is_development(l_environment) then
-				print ("Configure Request Pipeline")
-			end
+--				-- Configure the HTTP request pipeline.
+--			if attached {HOSTING_ENVIRONMENT} l_app.environment as l_environment and then {HOST_ENVIRONMENT_ENV_EXTENSIONS}.is_development(l_environment) then
+--				print ("Configure Request Pipeline")
 
-			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
+--			end
 
-			{AUTHORIZATION_APP_BUILDER_EXTENSIONS}.use_authorization (l_app).do_nothing()
+--			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
 
-			{CONTROLLER_ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_controllers (l_app).do_nothing()
+--			{AUTHORIZATION_APP_BUILDER_EXTENSIONS}.use_authorization (l_app).do_nothing()
+
+--			{CONTROLLER_ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_controllers (l_app).do_nothing()
+
+--			{ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_get_iendpoint_route_builder_string_request_delegate (
+--				endpoints: IENDPOINT_ROUTE_BUILDER; pattern: SYSTEM_STRING; request_delegate: REQUEST_DELEGATE): IENDPOINT_CONVENTION_BUILDER
 
 			l_app.run (Void)
 		end
