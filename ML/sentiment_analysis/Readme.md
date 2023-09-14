@@ -1,6 +1,6 @@
 # Analyze sentiment of website comments with binary classification in ML.NET
 
-This tutorial shows you how to create am Eiffel application using  .NET Core that classifies sentiment from website comments and takes the appropriate action. 
+This tutorial shows you how to create am Eiffel application using .NET Core that classifies sentiment from website comments and takes the appropriate action. 
 The binary sentiment classifier uses Eiffel programming language
 
 ## Overview
@@ -29,8 +29,9 @@ TODO check how can we use the Eiffel .Net wizard to use it.
 
 `dotnet add package Microsoft.ML --version 1.7.1 --package-directory packages`
 
-## Update Required Dependencies
-
+### Note
+Due to current limitations with Generics the code uses C# Facade for this specific example.
+Tha library enable us to access the generic features of the ML library that at the moment can't be consumed.
 
 # Prepare your data
 
@@ -42,18 +43,5 @@ TODO check how can we use the Eiffel .Net wizard to use it.
     * Download `UCI Sentiment Labeled Sentences dataset ZIP file`, and unzip.
     * Copy the `yelp_labelled.txt`` file into the `Data`` directory you created.
 
-## Create classes and define paths
 
-Load the dataset file.
-
-	```
-        data_path: SYSTEM_STRING
-            --  dataset file path.
-		local
-			l_dir: SYSTEM_STRING
-		do
-			l_dir := {SYSTEM_DIRECTORY}.get_parent({ENVIRONMENT}.current_directory).full_name
-			Result := {SYSTEM_PATH}.combine_string_string_string (l_dir, "Data", "yelp_labelled.txt")
-		end
-    ```
- ## Create classes for your input data and predictions
+The code is based on the following [C# tutorial](https://learn.microsoft.com/en-us/dotnet/machine-learning/tutorials/sentiment-analysis)
