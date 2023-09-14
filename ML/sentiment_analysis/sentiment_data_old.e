@@ -5,7 +5,7 @@ note
 	revision: "$Revision$"
 
 class
-	SENTIMENT_DATA
+	SENTIMENT_DATA_OLD
 
 feature -- Access
 

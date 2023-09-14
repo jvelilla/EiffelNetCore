@@ -1,11 +1,10 @@
 note
 	description: "Summary description for {SENTIMENT_PREDICTION}."
-	author: ""
 	date: "$Date$"
 	revision: "$Revision$"
 
 class
-	SENTIMENT_PREDICTION
+	SENTIMENT_PREDICTION_OLD
 
 inherit
 
