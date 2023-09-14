@@ -13,11 +13,11 @@ using System.Diagnostics;
 
 namespace SentimentAnalysis;
 
-class Program2
+class SentimentAnalysisGenerics
 {
     static readonly string _dataPath = Path.Combine(Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName, "Data", "yelp_labelled.txt");
     
-    static void Main2(string[] args)
+    public static void Execute()
     {
         // Create ML.NET context/local environment - allows you to add steps in order to keep everything together
         // as you discover the ML.NET trainers and transforms

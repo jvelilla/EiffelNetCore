@@ -2,6 +2,8 @@ using Microsoft.ML.Data;
 using Microsoft.ML;
 using SentimentAnalysis;
 using static Microsoft.ML.DataOperationsCatalog;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace SentimentAnalysis;
 
@@ -9,8 +11,9 @@ public class MLContextFacade
 {
     private readonly MLContext _mlContext;
 
-    public MLContextFacade(MLContext mlContext)
+    public MLContextFacade()
     {
+        MLContext mlContext = new MLContext();
         _mlContext = mlContext;
     }
 
@@ -52,13 +55,14 @@ public class MLContextFacade
         return predictionFunction.Predict(sampleStatement);
     }
 
-    public IDataView LoadFromEnumerable(IEnumerable<SentimentData> sentiments)
+    public IDataView LoadFromEnumerable(IList sentiments)
     {
-        return _mlContext.Data.LoadFromEnumerable(sentiments);
+        IEnumerable<SentimentData> localSentiments = sentiments.Cast<SentimentData>();
+        return _mlContext.Data.LoadFromEnumerable(localSentiments);
     }
 
-    public IEnumerable<SentimentPrediction> CreateEnumerable(IDataView predictions, bool reuseRowObject = false)
+    public IList CreateEnumerable(IDataView predictions, bool reuseRowObject = false)
     {
-        return _mlContext.Data.CreateEnumerable<SentimentPrediction>(predictions, reuseRowObject);
+        return _mlContext.Data.CreateEnumerable<SentimentPrediction>(predictions, reuseRowObject).ToList();
     }
 }
