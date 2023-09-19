@@ -2,16 +2,16 @@ note
 	description: "Summary description for {WHEATER_FORECAST_CONTROLLER}."
 	date: "$Date$"
 	revision: "$Revision$"
-	api_controller: create {API_CONTROLLER_ATTRIBUTE}.make end
-	route: create {ROUTE_MVC_ATTRIBUTE}.make("controller") end
+	metadata: create {API_CONTROLLER_ATTRIBUTE}.make end,
+			  create {ROUTE_MVC_ATTRIBUTE}.make("[controller]") end
+
 
 class
 	WEATER_FORECAST_CONTROLLER
 
 inherit
 
-	CONTROLLER
-
+	CONTROLLER_BASE
 
 feature -- Access
 
@@ -23,7 +23,9 @@ feature -- Access
 
 	get: IENUMERABLE
 		note
-			http_get: get_attribute 
+			property: auto
+			property_metadata: create {HTTP_GET_ATTRIBUTE}.make end
+
 		local
 			l_forecast: WEATHER_FORECAST
 			i: INTEGER
@@ -43,12 +45,5 @@ feature -- Access
 			end
 			Result := l_result
 		end
-
-	get_attribute:	HTTP_GET_ATTRIBUTE
-		do
-			create Result.make
-			Result.set_name("GetWeatherForecast")
-		end
-
 
 end

@@ -17,7 +17,10 @@ feature {NONE} -- Initialization
 			l_data: SENTIMENT_DATA
 			l_split_data_view: TRAIN_TEST_DATA_IN_DATA_OPERATIONS_CATALOG
 			l_model: ITRANSFORMER
+			l_context: ML_CONTEXT
+
 		do
+			print("Sentiment Analysis using Eiffel.Net %N")
 			print (data_path)
 			io.read_line
 

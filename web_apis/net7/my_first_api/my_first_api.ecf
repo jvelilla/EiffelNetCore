@@ -44,9 +44,8 @@
 		<assembly name="System.Text.RegularExpressions" location="$ISE_DOTNET_FRAMEWORK\System.Text.RegularExpressions.dll"/>
 		<assembly name="System.Xml.ReaderWriter" location="$ISE_DOTNET_FRAMEWORK\System.Xml.ReaderWriter.dll"/>
 		<assembly name="System.Xml.XPath" location="$ISE_DOTNET_FRAMEWORK\System.Xml.XPath.dll"/>
-		<assembly name="System.Diagnostics.EventLog" location="$ISE_DOTNET_FRAMEWORK\System.Diagnostics.EventLog.dll"/>
-		
 
+		<!--assembly name="System.Diagnostics.EventLog" location="$ISE_DOTNET_FRAMEWORK\System.Diagnostics.EventLog.dll"/-->
 		<!-- $ISE_DOTNET_FRAMEWORK = "c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.21\ref\net6.0\ -->
 		<!-- $ISE_ASPNET_CORE = "C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref-->
 		
@@ -207,6 +206,7 @@
 
 		<assembly name="System.ComponentModel" location="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.10\ref\net7.0\System.ComponentModel.dll"/>
 		
+		<assembly name="ASPNetUtil" location=".\custom_package\ASPNetUtil.dll"/>
 
 		<assembly name="Microsoft.OpenApi" location=".\packages\microsoft.openapi\1.4.3\lib\netstandard2.0\Microsoft.OpenApi.dll"/>
 		<assembly name="Microsoft.AspNetCore.OpenApi" location=".\packages\microsoft.aspnetcore.openapi\7.0.10\lib\net7.0\Microsoft.AspNetCore.OpenApi.dll"/>
