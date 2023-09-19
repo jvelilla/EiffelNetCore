@@ -206,7 +206,7 @@
 
 		<assembly name="System.ComponentModel" location="C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.10\ref\net7.0\System.ComponentModel.dll"/>
 		
-		<assembly name="ASPNetUtil" location=".\custom_package\ASPNetUtil.dll"/>
+		<!--assembly name="ASPNetUtil" location=".\custom_package\ASPNetUtil.dll"/-->
 
 		<assembly name="Microsoft.OpenApi" location=".\packages\microsoft.openapi\1.4.3\lib\netstandard2.0\Microsoft.OpenApi.dll"/>
 		<assembly name="Microsoft.AspNetCore.OpenApi" location=".\packages\microsoft.aspnetcore.openapi\7.0.10\lib\net7.0\Microsoft.AspNetCore.OpenApi.dll"/>

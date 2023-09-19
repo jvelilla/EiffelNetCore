@@ -18,7 +18,7 @@ feature {NONE} -- Initialization
 	make
 			-- Run application.
 		local
-			l_controler: WEATER_FORECAST_CONTROLLER
+			l_controler: WEATHER_FORECAST_CONTROLLER
 			builder: WEB_APPLICATION_BUILDER
 			l_native: NATIVE_ARRAY [SYSTEM_STRING]
 			--l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
@@ -35,11 +35,11 @@ feature {NONE} -- Initialization
 		do
 			{ENVIRONMENT}.set_environment_variable_string_string_environment_variable_target("ASPNETCORE_ENVIRONMENT", "Development", {ENVIRONMENT_VARIABLE_TARGET}.process )
 
-			builder := {WEB_APPLICATION}.create_builder_web_application_options({WEB_APPLICATION_OPTIONS_FACTORY}.create_web_application_options("Development", "my_first_api"))
+--			builder := {WEB_APPLICATION}.create_builder_web_application_options({WEB_APPLICATION_OPTIONS_FACTORY}.create_web_application_options("Development", "my_first_api"))
 
---			builder := {WEB_APPLICATION}.create_builder()
+			builder := {WEB_APPLICATION}.create_builder()
 
-			{JSON_CONFIGURATION_EXTENSIONS}.add_json_file(builder.configuration, "appsettings.Development.json", True, True).do_nothing()
+			--{JSON_CONFIGURATION_EXTENSIONS}.add_json_file(builder.configuration, "appsettings.Development.json", True, True).do_nothing()
 
 				-- Add services to the container
 			l_services := builder.services
@@ -62,8 +62,6 @@ feature {NONE} -- Initialization
 
 			end
 
-			--{HTTPS_REDIRECTION_FACADE}.add_https_redirection_with_specific_options(l_services, 443)
-
 			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
 
 			{AUTHORIZATION_APP_BUILDER_EXTENSIONS}.use_authorization (l_app).do_nothing()
@@ -71,7 +69,6 @@ feature {NONE} -- Initialization
 			{CONTROLLER_ENDPOINT_ROUTE_BUILDER_EXTENSIONS}.map_controllers (l_app).do_nothing()
 
 			l_app.run(Void)
-
 
 		end
 

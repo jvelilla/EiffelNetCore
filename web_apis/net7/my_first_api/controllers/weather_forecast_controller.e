@@ -7,7 +7,7 @@ note
 
 
 class
-	WEATER_FORECAST_CONTROLLER
+	WEATHER_FORECAST_CONTROLLER
 
 inherit
 
@@ -25,7 +25,6 @@ feature -- Access
 		note
 			property: auto
 			property_metadata: create {HTTP_GET_ATTRIBUTE}.make end
-
 		local
 			l_forecast: WEATHER_FORECAST
 			i: INTEGER
