@@ -24,7 +24,7 @@ feature -- Access
 	get: IENUMERABLE
 		note
 			property: auto
-			property_metadata: create {HTTP_GET_ATTRIBUTE}.make end
+			property_metadata: create {HTTP_GET_ATTRIBUTE}.make ("WeatherForcast") end
 		local
 			l_forecast: WEATHER_FORECAST
 			i: INTEGER
