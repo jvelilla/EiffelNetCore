@@ -11,6 +11,7 @@ namespace MyFirstapi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[NonActionClass("GetTest")]
 public class WeatherForecastController : Controller { 
 
 
@@ -38,7 +39,7 @@ public class WeatherForecastController : Controller {
         .ToArray();
     }
 
-    /*   public IEnumerable<WeatherForecast> GetTest()
+    public IEnumerable<WeatherForecast> GetTest()
        {
            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
            {
@@ -47,18 +48,7 @@ public class WeatherForecastController : Controller {
                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
            })
            .ToArray();
-       }*/
+      }
 
-    public override void OnActionExecuting(ActionExecutingContext context)
-    {
-        var nonActionAttr = (NonActionClassAttribute)context.Controller.GetType().GetCustomAttribute(typeof(NonActionClassAttribute));
-        if (nonActionAttr != null && nonActionAttr.MethodsToExclude.Contains(context.ActionDescriptor.DisplayName))
-        {
-            context.Result = new NotFoundResult(); // Or some other result to indicate the method was not found
-        }
-        else
-        {
-            base.OnActionExecuting(context);
-        }
-    }
+
 }

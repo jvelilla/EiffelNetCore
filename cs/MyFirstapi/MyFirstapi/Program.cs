@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,17 +27,33 @@ public class Program
 
         builder.Configuration.AddJsonFile("appsettings.json",
                 optional: true,
-                reloadOnChange: true);
+        reloadOnChange: true);
 
-
+        builder.Services.AddSingleton<IApplicationModelProvider, CustomApplicationModelProvider>();
         builder.Services.AddHttpsRedirection(opt => opt.HttpsPort = 443);
-        builder.Services.AddControllers();
-/*        builder.Services.AddControllers(options =>
+      /*  builder.Services.AddMvc(options =>
         {
-            options.Conventions.Add(new NonActionClassFilter());
-        }); 
-*/        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        builder.Services.AddEndpointsApiExplorer();
+            options.Conventions.Insert(0, new CustomActionModelConvention());
+        });*/
+        builder.Services.AddControllers();
+        /*        builder.Services.AddControllers(options =>
+                {
+                    options.Conventions.Add(new NonActionClassFilter());
+                }); 
+        */        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+        /*  builder.Services.AddMvc(options =>
+          {
+              options.Conventions.Add(new CustomApplicationModelConvention());
+          });*/
+        /*builder.Services.AddControllers(actions =>
+        {
+            actions.Conventions.Add(new CustomApplicationModelConvention());
+        });
+*/
+        
+
+    builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
