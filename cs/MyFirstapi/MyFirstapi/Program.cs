@@ -31,7 +31,11 @@ public class Program
 
         builder.Services.AddHttpsRedirection(opt => opt.HttpsPort = 443);
         builder.Services.AddControllers();
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+/*        builder.Services.AddControllers(options =>
+        {
+            options.Conventions.Add(new NonActionClassFilter());
+        }); 
+*/        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
@@ -52,35 +56,6 @@ public class Program
         app.MapControllers();
 
         app.Run();
-        //System.Diagnostics.Process.Start("https://localhost:5555");
     }
 
-/*    public static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container
-        var services = builder.Services;
-
-        MvcServiceCollectionExtensions.AddControllers(services);
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-        EndpointMetadataApiExplorerServiceCollectionExtensions.AddEndpointsApiExplorer(services);
-        //SwaggerGenServiceCollectionExtensions.AddSwaggerGen(Services).DoNothing;
-        // Adding swagger raise a null pointer exceptions
-
-        var app = builder.Build();
-
-        *//*// Configure the HTTP request pipeline.
-        if (HostingEnvironment.App.Environment != null && HostEnvironmentEnvExtensions.IsDevelopment(App.Environment))
-        {
-            Console.WriteLine("Configure Request Pipeline");
-        }
-        *//*
-        HttpsPolicyBuilderExtensions.UseHttpsRedirection(app);
-
-        AuthorizationAppBuilderExtensions.UseAuthorization(app);
-        ControllerEndpointRouteBuilderExtensions.MapControllers(app);
-
-        app.Run();
-    }*/
 }
