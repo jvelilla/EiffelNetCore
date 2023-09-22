@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace MyFirstapi;
 
-public class CustomApplicationModelProvider : IApplicationModelProvider
+public class CustomApplicationModelProviderExclude : IApplicationModelProvider
 {
     public int Order => -1000 + 99;
     // it's based on the value defined in  ApiBehaviorApplicationModelProvider : IApplicationModelProvider   public int Order => -1000 + 100;
