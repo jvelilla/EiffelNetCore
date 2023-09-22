@@ -5,7 +5,7 @@
 
 # Net 
 * using .Net 7
-* Eiffel
+* Eiffel 
 
 # Web
     * HTTP 
@@ -13,9 +13,15 @@
 
 ## Getting Started
 
-* EiffelStudio 23.08 
-* Postman or Hoppscotch for testing APIs
-* .Net 7
+* EiffelStudio 23.09 or greater. 
+* * .Net 7
+
+## Testing APIs
+* [Postman](https://www.postman.com/) 
+* [Hoppscotch](https://hoppscotch.io/)
+* curl 
+* Browser developer tools.
+
 
 ## Create our first Web API 
     *  Copy the project template net7
@@ -40,3 +46,14 @@ dotnet add package Swashbuckle.AspNetCore --version 6.5.0 --package-directory pa
 dotnet add package Microsoft.AspNetCore.OpenApi --version 7.0.10 --package-directory packages
 
 dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 7.0.11 --package-directory packages
+
+## Asp.Net Core 
+ASP.Net core provies a MVC model view controler.
+
+
+
+## How to launch the application
+- Copy the Properties from the Root directory project to F_code
+- Copy the wrap_my_first_api.csproj from the Root directory project to F_code
+- Go to the F_code directory and run `dotnet run --launch-profile="https"`
+- Open the browser https://localhost:7097/WeatherForecast
