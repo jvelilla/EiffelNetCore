@@ -10,15 +10,26 @@ class
 feature -- Access
 
 	date: DATE_ONLY
+--		note property:auto
+--		 	 property_metadata: create {JSON_PROPERTY}.make_from_message ("date") end
+		attribute end
 
 	temperature_c: INTEGER
+--		note property:auto
+--		 	 property_metadata: create {JSON_PROPERTY}.make_from_message ("temperature_c") end
+		attribute end
 
 	temperature_f: INTEGER
+--		note property:auto
+--		 	 property_metadata: create {JSON_PROPERTY}.make_from_message ("temperature_f") end
 		do
 			Result :=  ((temperature_c * 9/ 5) + 32).truncated_to_integer
 		end
 
 	summary: detachable SYSTEM_STRING
+--		note property:auto
+--		 	 property_metadata: create {JSON_PROPERTY}.make_from_message("summary") end
+		attribute end
 
 
 feature -- Element Change
