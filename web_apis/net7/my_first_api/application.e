@@ -42,7 +42,7 @@ feature {NONE} -- Initialization
 				-- Add services to the container
 			l_services := builder.services
 
-			{CUSTOM_APPLICATION_MODEL_PROVIDER_FACADE}.register(l_services)
+			{CUSTOM_APPLICATION_MODEL_PROVIDER_FACADE}.register_included_actions_provider(l_services)
 
 
 			{NEWTONSOFT_JSON_MVC_BUILDER_EXTENSIONS}.add_newtonsoft_json({MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services)).do_nothing()

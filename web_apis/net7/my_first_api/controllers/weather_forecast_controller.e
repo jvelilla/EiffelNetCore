@@ -4,19 +4,20 @@ note
 	revision: "$Revision$"
 	metadata: create {API_CONTROLLER_ATTRIBUTE}.make end,
 		create {ROUTE_MVC_ATTRIBUTE}.make ("[controller]") end,
-		create {NON_ACTION_CLASS_ATTRIBUTE}.make (
-			<<"Equal", "GetTest", "StandardEqual", "DeepEqual",
-				"Summaries", "Generator", "GeneratingType", "ConformsTo",
-				"SameType", "IsEqual", "StandardIsEqual", "IsDeepEqual",
-				"Twin", "Copy", "StandardCopy", "Clone",
-				"StandardClone", "StandardTwin", "DeepTwin", "DeepClone",
-				"DeepCopy", "InternalCorrectMismatch", "Io", "Out", "TaggedOut",
-				"Print", "OperatingEnvironment", "DefaultCreate", "DefaultRescue",
-				"DoNothing", "Default", "DefaultPointer", "AsAttached",
-				"____class_name", "____type", "____standard_twin", "____copy",
-				"____is_equal", "_invariant"
-			>>)
- end
+		create {INCLUDE_ACTION_CLASS_ATTRIBUTE}.make(<<"Get">>) end
+--		create {NON_ACTION_CLASS_ATTRIBUTE}.make (
+--			<<"Equal", "GetTest", "StandardEqual", "DeepEqual",
+--				"Summaries", "Generator", "GeneratingType", "ConformsTo",
+--				"SameType", "IsEqual", "StandardIsEqual", "IsDeepEqual",
+--				"Twin", "Copy", "StandardCopy", "Clone",
+--				"StandardClone", "StandardTwin", "DeepTwin", "DeepClone",
+--				"DeepCopy", "InternalCorrectMismatch", "Io", "Out", "TaggedOut",
+--				"Print", "OperatingEnvironment", "DefaultCreate", "DefaultRescue",
+--				"DoNothing", "Default", "DefaultPointer", "AsAttached",
+--				"____class_name", "____type", "____standard_twin", "____copy",
+--				"____is_equal", "_invariant"
+--			>>)
+-- end
 
 class
 	WEATHER_FORECAST_CONTROLLER
