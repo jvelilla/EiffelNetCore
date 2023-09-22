@@ -33,7 +33,6 @@ feature {NONE} -- Initialization
 			l_web_options: WEB_APPLICATION_OPTIONS
 		do
 --			{ENVIRONMENT}.set_environment_variable_string_string_environment_variable_target("ASPNETCORE_ENVIRONMENT", "Development", {ENVIRONMENT_VARIABLE_TARGET}.process )
-
 --			builder := {WEB_APPLICATION}.create_builder_web_application_options({WEB_APPLICATION_OPTIONS_FACTORY}.create_web_application_options("Development", "my_first_api"))
 
 			builder := {WEB_APPLICATION}.create_builder()
@@ -45,10 +44,8 @@ feature {NONE} -- Initialization
 
 			{CUSTOM_APPLICATION_MODEL_PROVIDER_FACADE}.register(l_services)
 
-			--{HTTPS_REDIRECTION_SERVICES_EXTENSIONS}.add_https_redirection()
 
-
-			{MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services).do_nothing()
+			{NEWTONSOFT_JSON_MVC_BUILDER_EXTENSIONS}.add_newtonsoft_json({MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services)).do_nothing()
 					-- Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			{ENDPOINT_METADATA_API_EXPLORER_SERVICE_COLLECTION_EXTENSIONS}.add_endpoints_api_explorer (l_services).do_nothing
 			--{SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS}.add_swagger_gen(l_services).do_nothing
@@ -58,7 +55,6 @@ feature {NONE} -- Initialization
 
 				-- Configure the HTTP request pipeline.
 			if attached {HOSTING_ENVIRONMENT} l_app.environment as l_environment and then {HOST_ENVIRONMENT_ENV_EXTENSIONS}.is_development(l_environment) then
-				print("%NDeveloping Mode%N")
 				{SWAGGER_BUILDER_EXTENSIONS}.use_swagger (l_app, Void).do_nothing()
 				{SWAGGER_UI_BUILDER_EXTENSIONS}.use_swagger_ui (l_app, Void).do_nothing()
 			end

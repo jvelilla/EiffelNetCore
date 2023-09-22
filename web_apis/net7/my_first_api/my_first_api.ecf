@@ -212,7 +212,8 @@
 		<assembly name="Swashbuckle.AspNetCore.Swagger" location=".\packages\swashbuckle.aspnetcore.swagger\6.5.0\lib\net7.0\Swashbuckle.AspNetCore.Swagger.dll"/>
 		<assembly name="Swashbuckle.AspNetCore.SwaggerGen" location=".\packages\swashbuckle.aspnetcore.swaggergen\6.5.0\lib\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll"/>
 		<assembly name="Swashbuckle.AspNetCore.SwaggerUI" location=".\packages\swashbuckle.aspnetcore.swaggerui\6.5.0\lib\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll"/>
-
+	    <assembly name="Microsoft.AspNetCore.JsonPatch" location=".\packages\microsoft.aspnetcore.jsonpatch\7.0.11\lib\net7.0\Microsoft.AspNetCore.JsonPatch.dll"/>
+		<assembly name="Microsoft.AspNetCore.Mvc.NewtonsoftJson" location=".\packages\microsoft.aspnetcore.mvc.newtonsoftjson\7.0.11\lib\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll"/>
 
 		
 		<cluster name="root_cluster" location=".\" recursive="true">

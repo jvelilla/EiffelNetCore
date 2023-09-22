@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
 namespace MyFirstapi;
 
@@ -31,11 +32,13 @@ public class Program
 
         builder.Services.AddSingleton<IApplicationModelProvider, CustomApplicationModelProvider>();
         builder.Services.AddHttpsRedirection(opt => opt.HttpsPort = 443);
-      /*  builder.Services.AddMvc(options =>
-        {
-            options.Conventions.Insert(0, new CustomActionModelConvention());
-        });*/
-        builder.Services.AddControllers();
+        /*  builder.Services.AddMvc(options =>
+          {
+              options.Conventions.Insert(0, new CustomActionModelConvention());
+          });*/
+        builder.Services.AddControllers().AddNewtonsoftJson();
+
+
         /*        builder.Services.AddControllers(options =>
                 {
                     options.Conventions.Add(new NonActionClassFilter());
@@ -51,9 +54,9 @@ public class Program
             actions.Conventions.Add(new CustomApplicationModelConvention());
         });
 */
-        
 
-    builder.Services.AddEndpointsApiExplorer();
+
+        builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
         var app = builder.Build();
