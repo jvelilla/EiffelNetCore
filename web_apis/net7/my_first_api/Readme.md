@@ -50,7 +50,53 @@ dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson --version 7.0.11 --pa
 ## Asp.Net Core 
 ASP.Net core provies a MVC model view controler.
 
+- Controllers inherit from ControllerBase
+- Need to use class attributes [ApiController]
+    - content negotiation
+    - serialization
+    - etc
+- Http Methods: Method and/or attribute to provide teh HTTP ver
+       [HttpGet]  / Get[somethingElse]() it will be a Get request
+       [HttpPost] / Post[somethingElse]() it will be a Post request   
 
+    basically we can have methods/features that are called like HTTP methods like
+    `get, post, put, delete, ect` or the features start with the HTTP method name like `get_something`, `post_something`, etc
+
+    With attribues like [HttpGet], we mark a feature responsible for Get requests, similarly for other HTTP methods.
+     
+ ```
+    note
+        description: "Controller example"
+    	metadata: create {API_CONTROLLER_ATTRIBUTE}.make end,
+		create {ROUTE_MVC_ATTRIBUTE}.make ("[controller]") end,
+        create {INCLUDE_ACTION_CLASS_ATTRIBUTE}.make(<<"Get">>) end
+
+    class MY_CONTROLLER
+        inherit
+        CONTROLLER_BASE
+
+    feature -- HTTP methods
+    	get: IENUMERABLE
+		    note
+			    property: auto
+			    property_metadata: create {HTTP_GET_ATTRIBUTE}.make ("GetWeatherForecast") end
+            do
+            end
+     end       
+
+
+ ```        
+
+### Routing with Attribute
+
+| Attribute    | Description |
+| ------------ | ----------- |
+| [Route("/products")] | URL to call the API |
+| [Route("/products/{id}")] | Controller action parameter is taken from URL |
+| [Route("/products/{id?}")] | Optional controller action parameter is taken from URL |
+| [Route("/[products]")] | Use controller name in URL |
+
+The last one `[Route("/[products]")]`, is the name of the controller, is not the name of the class, which is the class name minus controller. 
 
 ## How to launch the application
 - Copy the Properties from the Root directory project to F_code

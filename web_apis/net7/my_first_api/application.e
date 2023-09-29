@@ -20,7 +20,6 @@ feature {NONE} -- Initialization
 			l_controler: WEATHER_FORECAST_CONTROLLER
 			builder: WEB_APPLICATION_BUILDER
 			l_native: NATIVE_ARRAY [SYSTEM_STRING]
-			--l_service: SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS
 			l_mvc_builder: IMVC_BUILDER
 			l_service_collection: ISERVICE_COLLECTION
 			l_app: WEB_APPLICATION
@@ -47,16 +46,19 @@ feature {NONE} -- Initialization
 
 			{NEWTONSOFT_JSON_MVC_BUILDER_EXTENSIONS}.add_newtonsoft_json({MVC_SERVICE_COLLECTION_EXTENSIONS}.add_controllers (l_services)).do_nothing()
 					-- Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-			{ENDPOINT_METADATA_API_EXPLORER_SERVICE_COLLECTION_EXTENSIONS}.add_endpoints_api_explorer (l_services).do_nothing
-			--{SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS}.add_swagger_gen(l_services).do_nothing
-				-- Adding swagger raise a null pointer exceptions	
+			--{ENDPOINT_METADATA_API_EXPLORER_SERVICE_COLLECTION_EXTENSIONS}.add_endpoints_api_explorer (l_services).do_nothing
+			--{SWAGGER_GEN_SERVICE_COLLECTION_EXTENSIONS_FACADE}.add_swagger_gen(l_services).do_nothing
 
 			l_app := builder.build
 
 				-- Configure the HTTP request pipeline.
-			if attached {HOSTING_ENVIRONMENT} l_app.environment as l_environment and then {HOST_ENVIRONMENT_ENV_EXTENSIONS}.is_development(l_environment) then
-				{SWAGGER_BUILDER_EXTENSIONS}.use_swagger (l_app, Void).do_nothing()
-				{SWAGGER_UI_BUILDER_EXTENSIONS}.use_swagger_ui (l_app, Void).do_nothing()
+			if {HOST_ENVIRONMENT_ENV_EXTENSIONS}.is_development(l_app.environment) then
+				--{SWAGGER_BUILDER_EXTENSIONS}.use_swagger (l_app, Void).do_nothing()
+				--{SWAGGER_UI_BUILDER_EXTENSIONS}.use_swagger_ui (l_app, Void).do_nothing()
+
+				--{USE_SWAGGER_UI_FACADE}.use_swagger_ui (l_app).do_nothing()
+
+
 			end
 
 			{HTTPS_POLICY_BUILDER_EXTENSIONS}.use_https_redirection (l_app).do_nothing()
