@@ -1,4 +1,4 @@
-# How to create a C# library
+# How to create a C# library using Visual Studio
 
 - Start Microsoft Visual Studio: Launch the Visual Studio application on your computer.
 - Create a New Project: On the Menu click `Create New Project`.
