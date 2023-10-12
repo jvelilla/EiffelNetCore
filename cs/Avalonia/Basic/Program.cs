@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.ReactiveUI;
+using AvaloniaAppBuilder;
 using System;
 
 namespace BasicMvvmSample;

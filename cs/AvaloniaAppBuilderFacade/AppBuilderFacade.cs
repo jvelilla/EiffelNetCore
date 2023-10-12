@@ -2,7 +2,8 @@
 using System.Reflection;
 using System;
 using System.Linq;
-
+using System.Reflection.PortableExecutable;
+namespace AvaloniaAppBuilder;
 public class AppBuilderFacade
 {
     /// <summary>
