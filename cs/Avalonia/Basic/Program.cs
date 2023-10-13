@@ -13,8 +13,7 @@ namespace BasicMvvmSample;
          [STAThread]
         public static void Main(string[] args)
         {
-            var facade = new AppBuilderFacade();
-            facade.BuildAndConfigure(typeof(App))
+            AppBuilderFacade.BuildAndConfigure(typeof(App))
                    .LogToTrace()
                    .UseReactiveUI()
                    .StartWithClassicDesktopLifetime(args);

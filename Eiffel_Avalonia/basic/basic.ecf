@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-23-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-23-0 http://www.eiffel.com/developers/xml/configuration-1-23-0.xsd" name="basic" uuid="7D7025F4-8615-4424-A301-0806BD14F034">
+	<target name="basic">
+		<root cluster="root_cluster" class="PROGRAM" feature="make"/>
+		<file_rule>
+			<exclude>/CVS$</exclude>
+			<exclude>/EIFGENs$</exclude>
+			<exclude>/\.git$</exclude>
+			<exclude>/\.svn$</exclude>
+		</file_rule>
+		<option warning="none" full_class_checking="false" is_obsolete_iteration="true">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<setting name="dotnet_naming_convention" value="True"/>
+		<setting name="executable_name" value="basic"/>
+		<setting name="msil_clr_version" value="net7"/>
+		<setting name="msil_generation" value="True"/>
+		<setting name="msil_generation_type" value="exe"/>
+		<setting name="dead_code_removal" value="all"/>
+		<capability>
+			<concurrency support="none"/>
+			<void_safety support="none"/>
+		</capability>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+
+		<assembly name="avalonia" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.dll"/>
+		<assembly name="avalonia.base" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Base.dll"/>
+		<assembly name="avalonia.controls" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Controls.dll"/>
+		<assembly name="avalonia.dialogs" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Dialogs.dll"/>
+
+		<assembly name="avalonia.markup" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Markup.dll"/>
+		<assembly name="avalonia.markup.xaml" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Markup.Xaml.dll"/>
+		<assembly name="avalonia.metal" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Metal.dll"/>
+		<assembly name="avalonia.MicroCom" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.MicroCom.dll"/>
+		<assembly name="avalonia.OpenGL" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.OpenGL.dll"/>
+		<assembly name="avalonia.themes.fluent" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.MicroCom.dll"/>								
+
+        <assembly name= "reactive.ui" location=".\packages\reactiveui\18.3.1\lib\net6.0\ReactiveUI.dll"/>
+		<assembly name= "system.reactive" location=".\packages\system.reactive\5.0.0\lib\net5.0\System.Reactive.dll"/>
+		
+		
+
+		<assembly name="avaloniaappfacade" location=".\packages\AvaloniaAppBuilderFacade.dll"/>
+		<assembly name="eiffelsoftware_runtime" location="$ISE_EIFFEL\studio\spec\$ISE_PLATFORM\lib\$ISE_DOTNET_PLATFORM\EiffelSoftware.Runtime.dll"/>
+		<assembly name="system.console" location="$ISE_DOTNET_FRAMEWORK\System.Console.dll"/>
+		<assembly name="system.Runtime" location="$ISE_DOTNET_FRAMEWORK\System.Runtime.dll"/>
+		
+		<assembly name="system.object_models" location="$ISE_DOTNET_FRAMEWORK\System.ObjectModel.dll"/>
+
+		<cluster name="root_cluster" location=".\" recursive="true">
+			<option warning="none" is_obsolete_iteration="true"/>
+		</cluster>
+	</target>
+</system>

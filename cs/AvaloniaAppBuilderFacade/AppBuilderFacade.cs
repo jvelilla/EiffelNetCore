@@ -1,8 +1,5 @@
 ﻿using Avalonia;
 using System.Reflection;
-using System;
-using System.Linq;
-using System.Reflection.PortableExecutable;
 namespace AvaloniaAppBuilder;
 public class AppBuilderFacade
 {
@@ -12,7 +9,7 @@ public class AppBuilderFacade
     /// <param name="entryPointType">The Type of the entry point for the application.</param>
     /// <returns>An instance of the AppBuilder class, configured with platform detection, logging, and ReactiveUI.</returns>
     /// <exception cref="InvalidOperationException">Thrown when the Configure method cannot be found.</exception>
-    public AppBuilder BuildAndConfigure(Type entryPointType)
+    public static AppBuilder BuildAndConfigure(Type entryPointType)
     {
         var appBuilderType = typeof(AppBuilder);
         var configureMethod = appBuilderType.GetMethods(BindingFlags.NonPublic | BindingFlags.Static)
