@@ -17,5 +17,6 @@ feature {NONE} -- Initialization
 			l_app: APP
 		do
 			l_app_builder := {APP_BUILDER_FACADE}.build_and_configure (({APP}).to_cil )
+			io.read_line
 		end
 end
