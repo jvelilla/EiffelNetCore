@@ -8,7 +8,7 @@ class
 
 inherit
 
-	REACTIVE_OBJECT
+	--REACTIVE_OBJECT
 	ANY
 		redefine
 			default_create
@@ -37,7 +37,8 @@ feature -- Access
 	greeting: SYSTEM_STRING
 		do
 			if attached name as s_name then
-				Result := "Hello" + s_name
+				Result := "Hello"
+				Result := Result.concat(s_name)
 			else
 				Result := "Hello World from Avalonia.Samples";
 			end
