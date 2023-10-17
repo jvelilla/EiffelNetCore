@@ -35,6 +35,9 @@
 		<assembly name="avalonia.metal" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Metal.dll"/>
 		<assembly name="avalonia.MicroCom" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.MicroCom.dll"/>
 		<assembly name="avalonia.OpenGL" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.OpenGL.dll"/>
+
+
+		<assembly name="Avalonia.Remote.Protocol" location=".\packages\avalonia.remote.protocol\11.0.4\lib\net6.0\Avalonia.Remote.Protocol.dll"/>
 		
 		
 		<assembly name="avalonia.win32" location=".\packages\avalonia.win32\11.0.4\lib\net6.0\Avalonia.Win32.dll"/>

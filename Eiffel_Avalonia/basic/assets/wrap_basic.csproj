@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <TrimMode>copyused</TrimMode>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="assembly_*.dll"/>
@@ -14,10 +14,12 @@
     <Reference Include="EiffelSoftware.Runtime">
       <HintPath>Eiffelsoftware.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="AvaloniaAppBuilderFacade">
+        <HintPath>AvaloniaAppBuilderFacade.dll</HintPath>
+    </Reference>
   </ItemGroup>
   
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <None Remove=".gitignore" />
   </ItemGroup>
@@ -36,9 +38,4 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.0" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="AvaloniaAppBuilderFacade">
-      <HintPath>AvaloniaAppBuilderFacade.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-</Project>
+ </Project>
