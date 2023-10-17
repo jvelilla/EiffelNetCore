@@ -29,21 +29,21 @@
 		<assembly name="avalonia.controls" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Controls.dll"/>
 		<assembly name="avalonia.dialogs" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Dialogs.dll"/>
 		<assembly name="avalonia.desktop" location=".\packages\avalonia.desktop\11.0.4\lib\net6.0\Avalonia.Desktop.dll"/>
-
-		<assembly name="avalonia.win32" location=".\packages\avalonia.win32\11.0.4\lib\net6.0\Avalonia.Win32.dll"/>
-
+		<assembly name="Avalonia.DesignerSupport" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.DesignerSupport.dll"/>
 		<assembly name="avalonia.markup" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Markup.dll"/>
 		<assembly name="avalonia.markup.xaml" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Markup.Xaml.dll"/>
 		<assembly name="avalonia.metal" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.Metal.dll"/>
 		<assembly name="avalonia.MicroCom" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.MicroCom.dll"/>
 		<assembly name="avalonia.OpenGL" location=".\packages\avalonia\11.0.4\lib\net6.0\Avalonia.OpenGL.dll"/>
+		
+		
+		<assembly name="avalonia.win32" location=".\packages\avalonia.win32\11.0.4\lib\net6.0\Avalonia.Win32.dll"/>
 		<assembly name="avalonia.themes.fluent" location=".\packages\avalonia.themes.fluent\11.0.4\lib\net6.0\Avalonia.Themes.Fluent.dll"/>
 		
-
+		
 		<assembly name="avalonia.skia" location=".\packages\avalonia.skia\11.0.4\lib\net6.0\Avalonia.Skia.dll"/>			
 
-
-
+		<assembly name="splat" location=".\packages\splat\14.4.1\lib\net6.0\Splat.dll"/>			
 
 		<assembly name="MicroCom.Runtime" location=".\packages\microcom.runtime\0.11.0\lib\net5.0\MicroCom.Runtime.dll"/>		
 

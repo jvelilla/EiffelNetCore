@@ -21,7 +21,7 @@ feature -- Models
 		end
 
 
-	simple_view_model: REACTIVE_VIEW_MODEL
+	reactive_view_model: REACTIVE_VIEW_MODEL
 		do
 			If internal_reactive_view_model = Void then
 				create internal_reactive_view_model

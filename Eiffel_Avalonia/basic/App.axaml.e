@@ -19,7 +19,10 @@ feature
 			l_main_window: MAIN_WINDOW
 		do
 			if attached {ICLASSIC_DESKTOP_STYLE_APPLICATION_LIFETIME} application_lifetime as desktop then
+
 				create l_main_window
+				l_main_window.set_data_context (create {MAIN_WINDOW_VIEW_MODEL})
+				desktop.set_main_window (l_main_window)
 			end
 
 			on_framework_initialization_completed

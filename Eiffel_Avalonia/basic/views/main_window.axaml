@@ -1,11 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:BasicMvvmSample.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:CompileBindings="True"
-		x:DataType="vm:MainWindowViewModel"
+		x:DataType="vm:MAIN_WINDOW_VIEW_MODEL"
         x:Class="MAIN_WINDOW"
         Icon="/Assets/avalonia-logo.ico"
         Title="BasicMvvmSample">
@@ -14,23 +13,23 @@
 	<!-- https://docs.avaloniaui.net/docs/next/basics/data/data-binding/compiled-bindings -->
 
 	<Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MAIN_WINDOW_VIEW_MODEL/>
     </Design.DataContext>
 
 	<TabControl>
 		
 		<!-- Our Simple ViewModel -->
 		<TabItem Header="Simple ViewModel" >
-			<StackPanel DataContext="{Binding SimpleViewModel}" Spacing="10">
+			<StackPanel DataContext="{Binding SIMPLE_VIEW_MODEL}" Spacing="10">
 				<TextBlock>Enter your Name:</TextBlock>
-				<TextBox Text="{Binding Name}" />
-				<TextBox Text="{Binding Greeting, Mode=OneWay}"
+				<TextBox Text="{Binding name}" />
+				<TextBox Text="{Binding greeting, Mode=OneWay}"
 						 IsReadOnly="True"
 						 FontWeight="Bold" />
 			</StackPanel>
 		</TabItem>
 
-		<!-- Our ReactiveViewModel -->
+		<!-- Our ReactiveViewModel 
 		<TabItem Header="Reactive UI" >
 			<StackPanel DataContext="{Binding ReactiveViewModel}" Spacing="10">
 				<TextBlock>Enter your Name:</TextBlock>
@@ -40,6 +39,7 @@
 						 FontWeight="Bold" />
 			</StackPanel>
 		</TabItem>
+		-->
 		
 	</TabControl>
 </Window>
